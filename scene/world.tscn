@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgdpy4gm40hs7"]
+[gd_scene load_steps=11 format=3 uid="uid://cgdpy4gm40hs7"]
 
 [ext_resource type="Texture2D" uid="uid://c8e3nrplnfs7x" path="res://img/circle.png" id="1_35arw"]
 [ext_resource type="Script" path="res://code/world.gd" id="1_s34se"]
 [ext_resource type="Script" path="res://code/Player.gd" id="2_hdal1"]
 [ext_resource type="Texture2D" uid="uid://ddu0oiw63gich" path="res://img/arrow.png" id="4_p13i7"]
 [ext_resource type="Script" path="res://code/Arrow.gd" id="4_yxrbd"]
+[ext_resource type="Texture2D" uid="uid://cstqtqmmgfror" path="res://img/bow2.png" id="6_ww74r"]
+[ext_resource type="Script" path="res://scene/Bow.gd" id="7_07ldl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_60j0w"]
 radius = 555.49
@@ -50,3 +52,16 @@ shape = SubResource("RectangleShape2D_sgias")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(393, 519)
 shape = SubResource("RectangleShape2D_exxo0")
+
+[node name="Bow" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(521, 189)
+scale = Vector2(5, 5)
+texture = ExtResource("6_ww74r")
+flip_h = true
+script = ExtResource("7_07ldl")
+
+[node name="String" type="Line2D" parent="Bow"]
+z_index = -1
+points = PackedVector2Array(-5, -14, -5, 0, -5, 14)
+width = 1.0

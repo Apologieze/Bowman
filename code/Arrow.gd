@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var dist: Vector2
 
 func _physics_process(delta):
-	if Input.is_action_pressed("click"):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		mouse_pos = get_viewport().get_mouse_position()
 		dist = (mouse_pos-position)
 		if dist.length() > 5:
