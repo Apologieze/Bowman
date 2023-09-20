@@ -32,10 +32,25 @@ texture = ExtResource("1_35arw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_60j0w")
 
+[node name="Bow" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(521, 189)
+scale = Vector2(5, 5)
+texture = ExtResource("6_ww74r")
+flip_h = true
+script = ExtResource("7_07ldl")
+
+[node name="String" type="Line2D" parent="Bow"]
+z_index = -1
+position = Vector2(-5, 0)
+points = PackedVector2Array(0, -14, 0, 0, 0, 14)
+width = 1.0
+
 [node name="Arrow" type="CharacterBody2D" parent="."]
 texture_filter = 1
 position = Vector2(312, 396)
 script = ExtResource("4_yxrbd")
+metadata/_edit_group_ = true
 
 [node name="Texture" type="Sprite2D" parent="Arrow"]
 texture_filter = 1
@@ -52,16 +67,3 @@ shape = SubResource("RectangleShape2D_sgias")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(393, 519)
 shape = SubResource("RectangleShape2D_exxo0")
-
-[node name="Bow" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(521, 189)
-scale = Vector2(5, 5)
-texture = ExtResource("6_ww74r")
-flip_h = true
-script = ExtResource("7_07ldl")
-
-[node name="String" type="Line2D" parent="Bow"]
-z_index = -1
-points = PackedVector2Array(-5, -14, -5, 0, -5, 14)
-width = 1.0
