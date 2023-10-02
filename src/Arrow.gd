@@ -32,7 +32,6 @@ func _physics_process(delta):
 			
 
 
-	print(top_level)
 	move_and_slide()	
 
 

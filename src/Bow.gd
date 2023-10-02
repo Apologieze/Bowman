@@ -16,7 +16,7 @@ func _process(delta):
 	if Input.is_action_pressed("click"):
 		pos_calc = get_viewport().get_mouse_position()-mouse_click
 		pos_calc.x = max(pos_calc.x, -800)
-		pos_calc.y = min(pos_calc.y, 800)
+		pos_calc.y = min(pos_calc.y*2, 800)
 		string.set_point_position(1, Vector2(-abs(pos_calc.length()*0.1),0))
 		rotation = (pos_calc+Vector2(-1,0)).angle()+PI
 		Parts.scale.y = 1-0.0003*pos_calc.length()
@@ -33,5 +33,6 @@ func _input(event):
 		mouse_click = get_viewport().get_mouse_position()
 	elif event.is_action_released("click"):
 		Arrow.velocity=-pos_calc*4
+		print(pos_calc)
 		string.set_point_position(1, Vector2(0,0))
 		Parts.scale = Vector2(1,1)
